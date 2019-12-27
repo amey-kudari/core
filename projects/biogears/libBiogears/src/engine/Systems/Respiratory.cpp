@@ -2182,6 +2182,7 @@ void Respiratory::TuneCircuit()
     if (compartment->HasVolume())
       compartment->Balance(BalanceGasBy::VolumeFraction);
   }
+
 }
 
 //--------------------------------------------------------------------------------------------------
