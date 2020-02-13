@@ -6,6 +6,7 @@
 #include "string-helpers.h"
 
 #include <biogears/string/manipulation.h>
+
 namespace biogears {
 //!
 //! Constructor for Arguments
@@ -71,8 +72,7 @@ bool Arguments::parse(int argc, char* argv[])
   }
   for (auto& arg : args )
   { //Iterate over the args and strip occurances of -- 
-    auto res = std::mismatch(prefix.begin(), prefix.end(), arg.begin());
-    if (res.first == prefix.end())
+    if (arg[0] == '-' && arg[1] == '-')
     {
       arg = arg.substr(2); 
     } else if (arg[0] == '-' && arg.size() > 1) {
