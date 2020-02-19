@@ -892,9 +892,7 @@ BioGears::~BioGears()
 {
   if (myLogger) {
     SAFE_DELETE(m_Logger);
-  } else { //Turn off forwarding for this logger
-    m_Logger->SetForward(nullptr);
-  }
+  } 
 }
 
 EngineState BioGears::GetState() { return m_State; }
